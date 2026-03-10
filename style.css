@@ -49,9 +49,25 @@ font-size:18px;
 
 /* HERO */
 
-.hero{
-padding:110px 20px;
-animation:fadeUp .8s ease;
+/* Hero только для главной страницы */
+.hero {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 60px 20px;
+  color: white;
+}
+
+/* обычные страницы */
+.page {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
 }
 
 /* BUTTON */

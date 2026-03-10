@@ -1,23 +1,34 @@
 const PRODUCTS = [
+
 {
-id:"cream",
-name:"Крем для лица",
-price:"25€",
-desc:"Глубокое увлажнение кожи и восстановление баланса.",
-image:"cream.jpg"
+id: "cream",
+name: "Крем для лица",
+desc: "Увлажняет кожу и придаёт сияние коже.",
+oldPrice: "30€",
+price: "25€",
+image: "cream.jpg",
+link: "cream.html",
+isNew: true
 },
+
 {
-id:"serum",
-name:"Сыворотка",
-price:"30€",
-desc:"Придаёт сияние и улучшает текстуру кожи.",
-image:"serum.jpg"
+id: "serum",
+name: "Сыворотка",
+desc: "Придаёт сияние и улучшает текстуру кожи.",
+oldPrice: "30€",
+price: "9999 PLN",
+image: "serum.jpg",
+link: "serum.html"
 },
+
 {
-id:"tonic",
-name:"Тоник",
-price:"20€",
-desc:"Освежает, очищает и подготавливает кожу.",
-image:"tonic.jpg"
+id: "tonic",
+name: "Тоник",
+desc: "Освежает, очищает и подготавливает кожу.",
+oldPrice: "30€",
+price: "20€",
+image: "tonic.jpg",
+link: "tonic.html"
 }
+
 ];

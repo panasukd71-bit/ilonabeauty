@@ -1,19 +1,38 @@
 // ===== CREATE PRODUCTS =====
 
-const catalog=document.getElementById("catalog");
+const catalog = document.getElementById("catalog");
 
-if(catalog){
+if (catalog) {
 
-PRODUCTS.forEach(product=>{
+PRODUCTS.forEach(product => {
+let discountHTML = "";
 
-catalog.innerHTML+=`
+if(product.oldPrice){
+
+const old = parseFloat(product.oldPrice);
+const current = parseFloat(product.price);
+
+const percent = Math.round((old - current) / old * 100);
+
+discountHTML = `<div class="badge-sale">-${percent}%</div>`;
+}
+catalog.innerHTML += `
 <div class="card">
+
+${product.isNew ? '<div class="badge-new">NEW</div>' : ''}
+${discountHTML}
 <a href="product.html?id=${product.id}">
 <img src="${product.image}">
 </a>
 
 <h3>${product.name}</h3>
-<p>${product.price}</p>
+
+<p class="desc">${product.desc ?? ""}</p>
+
+<div class="price-box">
+  ${product.oldPrice ? `<span class="old-price">${product.oldPrice}</span>` : ""}
+  <span class="price">${product.price}</span>
+</div>
 
 <a class="btn" href="product.html?id=${product.id}">
 Подробнее
@@ -24,6 +43,7 @@ href="https://t.me/Ninel_Viktorivna"
 target="_blank">
 Заказать
 </a>
+
 </div>
 `;
 
@@ -34,27 +54,32 @@ target="_blank">
 
 // ===== PRODUCT PAGE =====
 
-const params=new URLSearchParams(window.location.search);
-const productID=params.get("id");
+const params = new URLSearchParams(window.location.search);
+const productID = params.get("id");
 
-const productContainer=document.getElementById("product-page");
+const productContainer = document.getElementById("product-page");
 
-if(productContainer && productID){
+if (productContainer && productID) {
 
-const product=PRODUCTS.find(p=>p.id===productID);
+const product = PRODUCTS.find(p => p.id === productID);
 
-productContainer.innerHTML=`
+productContainer.innerHTML = `
 <div class="product-page">
 <img src="${product.image}">
 <h1>${product.name}</h1>
 <p>${product.desc}</p>
-<div class="price">${product.price}</div>
+
+<div class="price-box">
+  ${product.oldPrice ? `<span class="old-price">${product.oldPrice}</span>` : ""}
+  <span class="price">${product.price}</span>
+</div>
 
 <a class="btn"
 href="https://t.me/Ninel_Viktorivna"
 target="_blank">
 Заказать в Telegram
 </a>
+
 </div>
 `;
 
@@ -63,18 +88,18 @@ target="_blank">
 
 // ===== CARD ANIMATION =====
 
-const cards=document.querySelectorAll(".card");
+const cards = document.querySelectorAll(".card");
 
 function reveal(){
-const trigger=window.innerHeight-80;
+const trigger = window.innerHeight - 80;
 
-cards.forEach(card=>{
-const top=card.getBoundingClientRect().top;
-if(top<trigger){
+cards.forEach(card => {
+const top = card.getBoundingClientRect().top;
+if(top < trigger){
 card.classList.add("show");
 }
 });
 }
 
-window.addEventListener("scroll",reveal);
+window.addEventListener("scroll", reveal);
 reveal();

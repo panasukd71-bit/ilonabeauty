@@ -641,3 +641,51 @@ max-width:155px;
 }
 
 }
+/* =========================
+   MOBILE CARD COMPACT FIX
+========================= */
+
+@media screen and (max-width:768px){
+
+/* карточка компактнее */
+.card{
+padding:12px !important;
+}
+
+/* фото ниже по высоте */
+.card img{
+height:150px;
+object-fit:cover;
+}
+
+/* название меньше */
+.card h3{
+font-size:14px;
+margin:8px 0 4px;
+}
+
+/* описание короче */
+.desc{
+font-size:12px;
+line-height:1.3;
+margin-bottom:6px;
+
+display:-webkit-box;
+-webkit-line-clamp:2;
+-webkit-box-orient:vertical;
+overflow:hidden;
+}
+
+/* блок цены компактный */
+.price-box{
+margin:6px 0;
+}
+
+/* кнопки меньше */
+.card .btn{
+font-size:12px;
+padding:7px 10px;
+margin-top:6px;
+}
+
+}

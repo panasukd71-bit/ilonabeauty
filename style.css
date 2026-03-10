@@ -508,3 +508,50 @@ margin:0 10px;
 }
 
 }
+/* =========================
+   MOBILE SCALE
+========================= */
+
+@media (max-width:768px){
+
+/* HERO (баннер) */
+.hero{
+padding:70px 15px;
+}
+
+.hero h1{
+font-size:26px;
+}
+
+.hero p{
+font-size:14px;
+}
+
+/* КАТАЛОГ */
+.catalog{
+gap:20px;
+padding:40px 10px;
+}
+
+/* КАРТОЧКИ */
+.card{
+width:200px;
+padding:15px;
+border-radius:16px;
+}
+
+.card h3{
+font-size:16px;
+}
+
+.desc{
+font-size:13px;
+}
+
+/* КНОПКИ В КАРТОЧКЕ */
+.card .btn{
+padding:9px 16px;
+font-size:14px;
+}
+
+}

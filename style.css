@@ -1,0 +1,311 @@
+body{
+font-family:'Montserrat Alternates',sans-serif;
+margin:0;
+background:linear-gradient(to bottom,#fff0f5,#ffffff);
+text-align:center;
+color:#333;
+overflow-x:hidden;
+}
+
+/* PAGE TRANSITION */
+
+#page-transition{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+z-index:9999;
+transform:translateY(100%);
+transition:transform .6s ease;
+}
+
+#page-transition.active{
+transform:translateY(0);
+}
+
+/* NAV */
+
+nav{
+background:black;
+padding:15px;
+position:sticky;
+top:0;
+z-index:100;
+transition:.4s;
+}
+
+nav.scrolled{
+box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+nav a{
+color:white;
+margin:0 20px;
+text-decoration:none;
+font-size:18px;
+}
+
+/* HERO */
+
+.hero{
+padding:110px 20px;
+animation:fadeUp .8s ease;
+}
+
+/* BUTTON */
+
+.btn{
+display:inline-block;
+margin-top:15px;
+padding:12px 25px;
+border-radius:14px;
+text-decoration:none;
+color:white;
+background:black;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px) scale(1.05);
+box-shadow:0 15px 35px rgba(255,154,193,.4);
+}
+
+/* CATALOG */
+
+.catalog{
+display:flex;
+justify-content:center;
+gap:35px;
+flex-wrap:wrap;
+padding:60px 20px;
+}
+
+/* CARD */
+
+.card{
+background:white;
+padding:20px;
+width:260px;
+border-radius:20px;
+box-shadow:0 12px 30px rgba(0,0,0,.15);
+transition:.45s;
+opacity:0;
+transform:translateY(60px);
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.card:hover{
+transform:translateY(-15px) scale(1.04);
+box-shadow:
+0 25px 60px rgba(0,0,0,.25),
+0 0 25px rgba(255,154,193,.5);
+}
+
+.card img{
+width:100%;
+border-radius:14px;
+transition:.4s;
+}
+
+.card:hover img{
+transform:scale(1.1);
+}
+
+/* PRODUCT PAGE */
+
+.product-page{
+max-width:700px;
+margin:60px auto;
+animation:fadeUp .8s ease;
+}
+
+.product-page img{
+width:100%;
+border-radius:16px;
+}
+
+.price{
+font-size:24px;
+margin:20px 0;
+font-weight:700;
+}
+
+/* TELEGRAM FLOAT */
+
+.tg-float{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+background:#229ED9;
+color:white;
+font-size:28px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+transition:.3s;
+z-index:999;
+}
+
+.tg-float:hover{
+transform:scale(1.15);
+box-shadow:0 0 25px #229ED9;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+/* POPUP */
+
+.tg-popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.5);
+display:flex;
+justify-content:center;
+align-items:center;
+opacity:0;
+pointer-events:none;
+transition:.4s;
+z-index:10000;
+}
+
+.tg-popup.show{
+opacity:1;
+pointer-events:auto;
+}
+
+.tg-box{
+background:white;
+padding:30px;
+border-radius:18px;
+max-width:320px;
+text-align:center;
+position:relative;
+animation:fadeUp .5s ease;
+}
+
+#close-popup{
+position:absolute;
+top:10px;
+right:15px;
+cursor:pointer;
+font-size:20px;
+}
+
+/* ORDER ALERT */
+
+.order-alert{
+position:fixed;
+left:20px;
+bottom:20px;
+background:black;
+color:white;
+padding:12px 18px;
+border-radius:12px;
+opacity:0;
+transform:translateY(20px);
+transition:.5s;
+z-index:9999;
+}
+
+.order-alert.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* BUTTON PULSE */
+
+.btn{
+animation:pulse 3s infinite;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 rgba(255,154,193,0);}
+50%{box-shadow:0 0 20px rgba(255,154,193,.6);}
+100%{box-shadow:0 0 0 rgba(255,154,193,0);}
+}
+/* =========================
+   BLACK LABEL EFFECTS
+========================= */
+
+/* GLASS NAVBAR */
+
+nav{
+backdrop-filter:blur(10px);
+background:rgba(0,0,0,0.85);
+}
+
+/* GLASS CARDS */
+
+.card{
+background:rgba(255,255,255,0.75);
+backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,0.4);
+}
+
+/* LUXURY GLOW */
+
+.card:hover{
+box-shadow:
+0 25px 60px rgba(0,0,0,.25),
+0 0 35px rgba(255,154,193,.6);
+}
+
+/* SOFT BACKGROUND LIGHT */
+
+body::before{
+content:"";
+position:fixed;
+top:-200px;
+left:-200px;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#ffd6e7,transparent 70%);
+filter:blur(120px);
+z-index:-1;
+animation:moveLight 18s infinite alternate;
+}
+
+@keyframes moveLight{
+0%{transform:translate(0,0);}
+100%{transform:translate(400px,300px);}
+}
+
+/* CURSOR LIGHT */
+
+.cursor-light{
+position:fixed;
+width:120px;
+height:120px;
+border-radius:50%;
+pointer-events:none;
+background:radial-gradient(circle,
+rgba(255,154,193,.35),
+transparent 70%);
+transform:translate(-50%,-50%);
+z-index:9998;
+mix-blend-mode:soft-light;
+}

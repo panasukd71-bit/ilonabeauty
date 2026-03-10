@@ -555,3 +555,55 @@ font-size:14px;
 }
 
 }
+/* =========================
+   MOBILE FIX REAL
+========================= */
+
+@media screen and (max-width:768px){
+
+/* БАННЕР */
+.hero{
+padding:60px 15px !important;
+}
+
+.hero h1{
+font-size:24px !important;
+}
+
+.hero p{
+font-size:14px !important;
+}
+
+/* КАТАЛОГ */
+.catalog{
+gap:15px !important;
+padding:30px 10px !important;
+}
+
+/* КАРТОЧКИ */
+.card{
+width:180px !important;
+padding:14px !important;
+}
+
+/* КАРТИНКА */
+.card img{
+border-radius:12px;
+}
+
+/* ТЕКСТ */
+.card h3{
+font-size:15px;
+}
+
+.desc{
+font-size:13px;
+}
+
+/* КНОПКИ */
+.card .btn{
+font-size:13px;
+padding:8px 14px;
+}
+
+}

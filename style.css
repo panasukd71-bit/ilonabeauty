@@ -689,3 +689,80 @@ margin-top:6px;
 }
 
 }
+/* =========================
+   PERFECT MOBILE CARDS
+========================= */
+
+@media (max-width:768px){
+
+/* 2 карточки */
+.catalog{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+padding:20px 10px;
+}
+
+/* карточка компактная */
+.card{
+padding:12px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+/* фото фиксированной высоты */
+.card img{
+height:120px;
+object-fit:cover;
+}
+
+/* название */
+.card h3{
+font-size:14px;
+margin:6px 0;
+}
+
+/* описание короче (2 строки максимум) */
+.desc{
+font-size:12px;
+line-height:1.3;
+
+display:-webkit-box;
+-webkit-line-clamp:2;
+-webkit-box-orient:vertical;
+overflow:hidden;
+}
+
+/* цена компактная */
+.price-box{
+margin:6px 0;
+}
+
+/* ===== КНОПКИ В ОДНУ СТРОКУ ===== */
+
+.card .btn{
+font-size:11px;
+padding:7px 6px;
+flex:1;
+margin:4px 2px;
+}
+
+/* контейнер кнопок */
+.card a.btn{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+}
+
+/* кнопки рядом */
+.card .btn + .btn{
+margin-left:4px;
+}
+
+/* делаем кнопку-блок строкой */
+.card{
+gap:4px;
+}
+
+}
